@@ -5,7 +5,7 @@
     <h1 class="form-title">ログイン画面</h1>
     @csrf
         <div class="form-group">
-            <label for="email" class="">メールアドレス</label>  
+            <label for="email" class="">メールアドレス</label>
             <input id="email" type="email" class="form-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
         </div>
         @error('email')
@@ -24,7 +24,6 @@
             </span>
         @enderror
         </div>
-        
         <div class="form-check">
         <label class="form-check" for="remember">
             {{ __('ログイン情報を記録する') }}
@@ -37,5 +36,4 @@
             {{ __('ログイン') }}
         </button>
     </div>
-    
 @endsection

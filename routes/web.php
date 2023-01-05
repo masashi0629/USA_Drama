@@ -19,5 +19,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('work', 'WorkController');
-
+Route::resource('works', 'WorkController');
