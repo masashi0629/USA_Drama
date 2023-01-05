@@ -24,7 +24,6 @@
             </span>
         @enderror
         </div>
-
         <div class="form-check">
         <label class="form-check" for="remember">
             {{ __('ログイン情報を記録する') }}
@@ -37,5 +36,4 @@
             {{ __('ログイン') }}
         </button>
     </div>
-
 @endsection
