@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Work;
 
-class AdminTableSeeder extends Seeder
+class WorksTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Work::class,15)->create();
     }
 }
