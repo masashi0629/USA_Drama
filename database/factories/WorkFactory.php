@@ -8,13 +8,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Work::class, function (Faker $faker) {
     return [
-        'actors' => $faker->name,
-        'broadcast_times' => $faker->year,
-        'usa_broadcasters' => $faker->sentence(3),
-        'genres' => $faker->jobTitle,
-        'voice_actors' => $faker->name,
-        'work_actor' => $faker->name,
-        'work_voice_actor' => $faker->name,
-        'works' => $faker->title
+        'work_name' => $faker->title,
+        'genre_id' => rand(1,15),
+        'usa_broadcaster_id' => rand(1,15),
+        'broadcast_time_id' => rand(1,15)
     ];
 });

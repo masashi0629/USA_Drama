@@ -1,22 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Work extends Model
 {
 
-    protected $table = 'work';
+    protected $table = 'works';
 
     protected $fillable = [
-        'actors',
-        'broadcast_times',
-        'usa_broadcasters',
-        'genres',
-        'voice_actors',
-        'work_actor',
-        'work_voice_actor',
-        'works'
+        'work_name',
+        'genre_id',
+        'usa_broadcaster_id',
+        'broadcast_time_id',
     ];
 }
