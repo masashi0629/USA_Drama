@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkActorTable extends Migration
+class CreateVoiceAcotorWorkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateWorkActorTable extends Migration
      */
     public function up()
     {
-        Schema::create('work_actor', function (Blueprint $table) {
+        Schema::create('voice_actor_work', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('work_id');
             $table->foreign('work_id')->references('id')->on('works');
-            $table->unsignedBigInteger('actor_id');
-            $table->foreign('actor_id')->references('id')->on('actors');
+            $table->unsignedBigInteger('voice_actor_id');
+            $table->foreign('voice_actor_id')->references('id')->on('voice_actors');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateWorkActorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('work_actor');
+        Schema::dropIfExists('voice_actor_work');
     }
 }
