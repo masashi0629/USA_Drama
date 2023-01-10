@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BroadCast_TimesTableSeeder::class);
         $this->call(WorksTableSeeder::class);
         $this->call(Voice_Acotor_Tableseeder::class);
+        $this->call(Acotor_Work_Tableseeder::class);
+        $this->call(Voice_AcotorsTableseeder::class);
     }
 }
