@@ -2,7 +2,7 @@
 use App\Models\Voice_Acotor_Work;
 use Illuminate\Database\Seeder;
 
-class Voice_Acotor_TableSeeder extends Seeder
+class Voice_Acotor_WorkTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class Voice_Acotor_TableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Voice_Acotor_work::class,15)->create();
+        factory(Voice_Acotor_Work::class,15)->create();
     }
 }

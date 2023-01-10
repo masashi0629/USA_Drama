@@ -8,6 +8,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Acotor_Work::class, function (Faker $faker) {
     return [
-        'Acotor_Work' => $faker->name
+        'work_id' => rand(1,15),
+        'actor_id' => rand(1,15),
     ];
 });

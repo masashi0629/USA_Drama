@@ -10,4 +10,8 @@ class Voice_Actor extends Model
     protected $fillable = [
         'voice_actor_name'
     ];
+
+    public function works(){
+        return $this->hasMany('App\Models\Work');
+    }
 }

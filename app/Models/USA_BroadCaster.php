@@ -10,4 +10,8 @@ class USA_BroadCaster extends Model
     protected $fillable = [
         'broadcaster_name'
     ];
+
+    public function works(){
+        return $this->hasMany('App\Models\Work');
+    }
 }

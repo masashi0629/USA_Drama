@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\USA_BroadCaster;
 use Illuminate\Database\Seeder;
+use App\Models\USA_BroadCaster;
 
 class USA_BroadCastersTableSeeder extends Seeder
 {

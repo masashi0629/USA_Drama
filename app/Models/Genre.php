@@ -10,4 +10,8 @@ class Genre extends Model
     protected $fillable = [
         'genre_name'
     ];
+
+    public function works(){
+        return $this->hasMany('App\Models\Work');
+    }
 }

@@ -5,8 +5,8 @@
 use App\Models\USA_BroadCaster;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(USA_BroadCaster::class, function (Faker $faker) {
     return [
-        'usa_broadcasters' => $faker->sentence(3)
+        'broadcaster_name' => $faker->sentence(3)
     ];
 });

@@ -10,4 +10,7 @@ class Actor extends Model
     protected $fillable = [
         'actor_name'
     ];
+    public function works(){
+        return $this->belongsToMany('App\Models\Work');
+    }
 }
