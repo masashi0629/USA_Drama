@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Work;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -14,9 +14,9 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return view('works/index');
         //ランダム作品表示
-        $works = Work::inRandomOrder()->first();
+        $works = Work::inRandomOrder()->take(3)->get();
+        return view('works/index',compact('works'));
     }
 
     /**
