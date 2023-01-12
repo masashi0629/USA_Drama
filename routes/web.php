@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\WorkController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('works', 'WorkController');
+
+Route::get('/works', 'WorkController@index');

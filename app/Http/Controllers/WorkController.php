@@ -15,6 +15,8 @@ class WorkController extends Controller
     public function index()
     {
         return view('works/index');
+        //ランダム作品表示
+        $works = Work::inRandomOrder()->first();
     }
 
     /**
