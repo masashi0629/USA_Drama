@@ -11,6 +11,6 @@ class Actor extends Model
         'actor_name'
     ];
     public function works(){
-        return $this->belongsToMany('App\Models\Work');
+        return $this->belongsToMany('App\Models\Work',"actor_work","actor_id","work_id");
     }
 }

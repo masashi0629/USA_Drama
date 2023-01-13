@@ -47,7 +47,10 @@ class WorkController extends Controller
      */
     public function show($work)
     {
-        return view('works/show');
+        $showworks = Work::find($work);
+        $actors = Work::find($work)->actors()->get();
+        $voice_actors = Work::find($work)->vactors()->get();
+        return view('works.show',compact('showworks','actors','voice_actors'));
     }
 
     /**

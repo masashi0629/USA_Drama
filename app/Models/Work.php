@@ -25,14 +25,14 @@ class Work extends Model
     }
 
     public function actors(){
-        return $this->belongsToMany('App\Models\Actor');
+        return $this->belongsToMany("App\Models\Actor","actor_work", "work_id", "actor_id");
     }
 
     public function usa_broadcasters(){
         return $this->belongsToMany('App\Models\USA_BroadCaster');
     }
 
-    public function voice_actors(){
-        return $this->belongsToMany('App\Models\Voice_Actor');
+    public function vactors(){
+        return $this->belongsToMany('App\Models\Vactor',"vactor_work", "work_id", "vactor_id");
     }
 }

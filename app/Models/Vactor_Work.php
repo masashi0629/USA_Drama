@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Voice_Acotor_Work extends Model
+class Vactor_Work extends Model
 {
-    protected $table = 'voice_actor_work';
+    protected $table = 'vactor_work';
 
     protected $fillable = [
         'work_id',
-        'voice_actor_id'
+        'vactor_id'
     ];
 }

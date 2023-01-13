@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Voice_Actor extends Model
+class Vactor extends Model
 {
-    protected $table = 'voice_actors';
+    protected $table = 'vactors';
     protected $fillable = [
         'voice_actor_name'
     ];
 
     public function works(){
-        return $this->hasMany('App\Models\Work');
+        return $this->belongsToMany("App\Models\Work","vactor_work","vactor_id","work_id");
     }
 }
