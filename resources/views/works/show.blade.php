@@ -6,14 +6,15 @@
             <p class="content-description-genre">ジャンル：{{ $showworks->genre->genre_name }}</p>
             <p class="content-description-time">放送時間：{{ $showworks->broadcast_time->age_group }}</p>
 
-            @foreach ($showworks->$actors as $actor )
+            @foreach ($showworks->actors as $actor )
             <p>出演俳優</p>
             <p class="content-description-cast">{{$actor->actor_name }}</p>
             @endforeach
 
-            <p>吹き替え声優：</p>
+
             @foreach ($showworks->vactors as $voice_actor)
-                <p class="content-description-dub">{{ $voice_actor->voice_actor_name }}</p>
+            <p>吹き替え声優：</p>
+            <p class="content-description-dub">{{ $voice_actor->voice_actor_name }}</p>
             @endforeach
 
 
