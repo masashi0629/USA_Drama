@@ -6,7 +6,7 @@
         <form method="GET" action="{{ route('works.search') }}">
           <div class="header-form">
             <input type="text" placeholder="キーワードを入力"
-            name="keyward"/>
+            name="keyword"/>
 
             <select name="category" id="">
                 <option value="work">作品名から検索</option>
@@ -16,7 +16,7 @@
 
             <input type="submit" value="検索" />
             <button>
-                <a href="{{ route('works.search') }}" class="text-white">
+                <a href="{{ route('works.search') }}" class="">
                     クリア
                 </a>
             </button>
@@ -26,12 +26,12 @@
 
     <div class="header-center">
         <ul class="menu">
-            <li>
+            <li class="searchlist">
                 <a href="#">ジャンルから検索</a>
                 <ul>
                     @foreach ($genres as $genre)
                     <li>
-                        <a href="/genre/{{ $genre->id }}">
+                        <a class="downlist" href="/genre/{{$genre->id}}">
                             {{ $genre->genre_name }}
                         </a>
                     </li>
@@ -39,12 +39,12 @@
                 </ul>
             </li>
 
-            <li>
+            <li class="searchlist">
                 <a href="#">年代から検索</a>
                 <ul>
                     @foreach ($broadcast_times as $broadcast_time)
                     <li>
-                        <a href="/broadcast_time/{{$broadcast_time->id}}">
+                        <a class="downlist" href="/broadcast_time/{{$broadcast_time->id}}">
                             {{ $broadcast_time->age_group }}
                         </a>
                     </li>
@@ -52,12 +52,12 @@
                 </ul>
             </li>
 
-            <li>
+            <li class="searchlist">
                 <a href="#">放送局から検索</a>
                 <ul>
                     @foreach($usa_broadcasters as $usa_broadcaster)
                     <li>
-                        <a href="/broadcast_time/{{$broadcast_time->id}}">
+                        <a class="downlist" href="/broadcast_time/{{$broadcast_time->id}}">
                             {{ $usa_broadcaster->broadcaster_name }}
                         </a>
                     </li>
