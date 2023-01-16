@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Broadcast_Time;
+use App\Models\BroadcastTime;
 
 class Broadcast_TimesTableSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class Broadcast_TimesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Broadcast_Time::class,15)->create();
+        factory(BroadcastTime::class,15)->create();
     }
 }

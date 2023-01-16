@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\USA_BroadCaster;
+use App\Models\Usa_Broadcaster;
 
 class USA_BroadCastersTableSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class USA_BroadCastersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(USA_BroadCaster::class,15)->create();
+        factory(Usa_BroadCaster::class,15)->create();
     }
 }

@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\USA_BroadCaster;
+use App\Models\Usa_Broadcaster;
 use Faker\Generator as Faker;
 
-$factory->define(USA_BroadCaster::class, function (Faker $faker) {
+$factory->define(Usa_Broadcaster::class, function (Faker $faker) {
     return [
         'broadcaster_name' => $faker->sentence(3)
     ];

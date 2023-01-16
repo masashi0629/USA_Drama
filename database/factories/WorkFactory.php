@@ -11,6 +11,8 @@ $factory->define(Work::class, function (Faker $faker) {
         'work_name' => $faker->title,
         'genre_id' => rand(1,15),
         'usa_broadcaster_id' => rand(1,15),
-        'broadcast_time_id' => rand(1,15)
+        'broadcast_time_id' => rand(1,15),
+        'file_name' => $faker->unique()->imageUrl,
+        'summary' => $faker->realText(50)
     ];
 });

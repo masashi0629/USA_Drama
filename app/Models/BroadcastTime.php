@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Broadcast_Time extends Model
+class BroadcastTime extends Model
 {
     protected $table = 'broadcast_times';
     protected $fillable = [
