@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Work;
+use App\Models\Genre;
+use App\Models\BroadcastTime;
+use App\Models\UsaBroadcaster;
+use App\Models\Acotor_Work;
+use App\Models\Vactor_Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class WorkController extends Controller
 {
@@ -16,7 +23,10 @@ class WorkController extends Controller
     {
         //ランダム作品表示
         $works = Work::inRandomOrder()->take(3)->get();
-        return view('works/index',compact('works'));
+        $genres = Genre::get();
+        $broadcast_times = BroadcastTime::get();
+        $usa_broadcasters = UsaBroadcaster::get();
+        return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
 
     }
 
@@ -26,27 +36,10 @@ class WorkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function header()
+    public function create()
     {
-        $works = Work::paginate(20);
-        // 検索フォームで入力された値を取得
-       $search = $request->input('search');
-       $query = Work::query();
-       if ($search) {
-           // 全角スペースを半角に変換
-           $spaceConversion = mb_convert_kana($search, 's');
-           // 単語を半角スペースで区切り、配列にする
-           $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
-           // 単語をループで回し、ユーザーネームと部分一致するものがあれば、$queryとして保持される
-           foreach($wordArraySearched as $value) {
-           $query->where('$work->work_name', 'like', '%'.$value.'%');
-       }
-       $works = $query->paginate(20);
-        return view('works.header')
-        ->with([
-           'works' => $users,
-           'search' => $search,
-       ]);
+       //
+
     }
 
     /**
@@ -68,6 +61,9 @@ class WorkController extends Controller
      */
     public function show($work)
     {
+        $genres = Genre::get();
+        $broadcast_times = BroadcastTime::get();
+        $usa_broadcasters = UsaBroadcaster::get();
         $showworks = Work::find($work);
         $actors = Work::find($work)->actors()->get();
         $voice_actors = Work::find($work)->vactors()->get();
@@ -106,5 +102,55 @@ class WorkController extends Controller
     public function destroy(Work $work)
     {
         //
+    }
+
+    public function search(Request $request){
+        $keyword = $request->input('keyword');
+        $category = $request->input('category');
+         $genres = Genre::get();
+        $broadcast_times = BroadcastTime::get();
+        $usa_broadcasters = UsaBroadcaster::get();
+        if($request->category == 'work'){
+            $query = Work::query();
+             $query->where('work_name', 'LIKE', "%{$keyword}%");
+        }
+        elseif ($request->category == 'actor') {
+            $query = Work::query();
+            $query->whereHas('actors', function ($q) use($keyword) {
+                $q->where('actor_name','LIKE', "%{$keyword}%");
+            });
+        }
+        else {
+            $query = Work::query();
+            $query->whereHas('vactors', function ($q) use($keyword) {
+                $q->where('voice_actor_name','LIKE', "%{$keyword}%");
+            });
+        }
+         $works = $query->get();
+         return view('works/index',compact('works','keyword','genres','broadcast_times','usa_broadcasters'));
+    }
+
+    public function genre(string $genre){
+    $works = Genre::find($genre)->works()->get();
+    $genres = Genre::get();
+    $broadcast_times = BroadcastTime::get();
+    $usa_broadcasters = UsaBroadcaster::get();
+    return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
+    }
+
+    public function broadcast_time(string $broadcast_time){
+    $works = BroadcastTime::find($broadcast_time)->works()->get();
+    $genres = Genre::get();
+    $broadcast_times = BroadcastTime::get();
+    $usa_broadcasters = UsaBroadcaster::get();
+    return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
+    }
+
+    public function usa_broadcaster(string $usa_broadcaster){
+    $works = UsaBroadCaster::find($usa_broadcaster)->works()->get();
+    $genres = Genre::get();
+    $broadcast_times = BroadcastTime::get();
+    $usa_broadcasters = UsaBroadcaster::get();
+    return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
     }
 }

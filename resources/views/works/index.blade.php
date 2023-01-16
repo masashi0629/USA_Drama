@@ -1,15 +1,11 @@
 @extends('layouts.app') @section('content')
-<div class="sidebar">
-    <p>サイドバー</p>
-    <ul>
-        <li>ジャンル</li>
-        <li>年代別</li>
-        <li>メニュー</li>
-    </ul>
-</div>
 
 <main>
     <div class="works">
+        @if(isset($keyword))
+        <p class="keyword">検索条件：{{ $keyword }}</p>
+        @endif
+
         @foreach ($works as $work)
         <div class="work">
             <div class="work-image">

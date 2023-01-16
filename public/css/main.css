@@ -31,6 +31,13 @@ header {
     margin-left: 200px;
 }
 
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
 .header-right {
     display: flex;
     margin-left: auto;
@@ -68,6 +75,29 @@ header {
     vertical-align: middle;
     line-height: 50px;
 }
+
+.menu {
+    list-style-type: none;
+}
+.menu > li {
+    display: inline-block;
+    border: 1px solid gray;
+    position: relative;
+}
+.menu > li > ul {
+    display: none;
+}
+.menu > li:hover ul {
+    display: block;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 1.5em;
+    left: 0;
+    list-style-type: none;
+    border: 1px solid gray;
+}
+
 .form-title {
     margin: 0 auto;
 }
@@ -169,4 +199,9 @@ header {
 .content-description {
     margin-left: 100px;
     margin-top: 100px;
+}
+
+.keyword {
+    padding-top: 100px;
+    margin: 0;
 }

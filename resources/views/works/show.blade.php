@@ -17,6 +17,10 @@
             <p class="content-description-dub">{{ $voice_actor->voice_actor_name }}</p>
             @endforeach
 
+            <p class="content-descripton-summary">あらすじ：{{ $showworks->summary }}</p>
+
+            <div class="content-image">
+                <img src="{{$showworks->file_name }}" alt="" width="500px" height="300px"/>
 
         </div>
 

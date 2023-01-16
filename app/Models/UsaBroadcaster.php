@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Usa_Broadcaster extends Model
+class UsaBroadcaster extends Model
 {
     protected $table = 'usa_broadcasters';
     protected $fillable = [

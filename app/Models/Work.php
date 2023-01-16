@@ -16,7 +16,7 @@ class Work extends Model
         'broadcast_time_id',
     ];
     public function broadcast_time(){
-        return $this->belongsTo('App\Models\Broadcast_Time');
+        return $this->belongsTo('App\Models\BroadcastTime');
     }
 
     public function genre(){
@@ -29,7 +29,7 @@ class Work extends Model
     }
 
     public function usa_broadcasters(){
-        return $this->belongsToMany('App\Models\USA_BroadCaster');
+        return $this->belongsToMany('App\Models\UsaBroadcaster');
     }
 
     public function vactors(){
