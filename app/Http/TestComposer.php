@@ -21,6 +21,6 @@ class TestComposer
         $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
         $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
 
-        $view->compact('works','genres','broadcast_times','usa_broadcasters');
+        $view->with(['genres'=>$genres,'broadcast_times'=>$broadcast_times,'usa_broadcasters'=>$usa_broadcasters]);
     }
 }

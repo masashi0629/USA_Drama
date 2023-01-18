@@ -29,7 +29,7 @@ class Work extends Model
     }
 
     public function usa_broadcasters(){
-        return $this->belongsToMany('App\Models\UsaBroadcaster');
+        return $this->belongsTo('App\Models\UsaBroadcaster');
     }
 
     public function vactors(){

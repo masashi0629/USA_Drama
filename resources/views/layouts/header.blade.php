@@ -86,12 +86,12 @@
         @else
 
         <a href="{{ route('login') }}" class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3 ml-1">
-            ログイン{{ $genres }}
+            ログイン
         </a>
 
         @if (Route::has('register'))
         <a href="{{ route('register') }} " class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3">
-            新規登録 {{ $genres }}
+            新規登録
         </a>
         @endif
         @endauth
