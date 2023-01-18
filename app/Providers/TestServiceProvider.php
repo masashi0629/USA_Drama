@@ -24,6 +24,6 @@ class TestServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('header','App\Http\TestComposer');
+        View::composer('layouts/header','App\Http\TestComposer');
     }
 }
