@@ -2,14 +2,16 @@ body {
     margin: 0;
 }
 header {
-    height: 70px;
+    /*height: 70px;
     width: 100%;
-    background-color: rgb(209, 206, 206);
+    background-color: rgb(66, 66, 66);
     display: flex;
-    position: fixed; /*fixedを設定して固定*/
-    z-index: 999; /*最前面へ*/
-    top: 0; /*位置指定*/
-    left: 0;
+    */
+    /*position: fixed;
+    z-index: 999;
+    top: 0;
+     left: 0;*/
+
 }
 
 .header-left {
@@ -17,6 +19,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -1rem;
+
 }
 
 .header-left-logo {
@@ -25,11 +29,15 @@ header {
     font-family: Yu Gothic;
     text-decoration: none;
     display: block;
+
 }
 
 .header-form {
+
     margin-left: 200px;
+
 }
+
 
 .header-center {
     display: flex;
@@ -75,13 +83,14 @@ header {
     vertical-align: middle;
     line-height: 50px;
 }
+*/
+
 
 .menu {
     list-style-type: none;
 }
 .menu > li {
     display: inline-block;
-    border: 1px solid gray;
     position: relative;
 }
 .menu > li > ul {
@@ -90,13 +99,19 @@ header {
 .menu > li:hover ul {
     display: block;
     position: absolute;
+    z-index: 10;
+    background-color: white;
+    width: 100px;
     padding: 0;
     margin: 0;
     top: 1.5em;
     left: 0;
     list-style-type: none;
-    border: 1px solid gray;
+    text-align: center;
+    border: 1px solid ;
 }
+
+
 
 .form-title {
     margin: 0 auto;
@@ -147,7 +162,7 @@ header {
     display: flex;
     flex-direction: column;
 }
-
+/*
 .sidebar {
     width: 15%;
     height: 100vh;
@@ -205,3 +220,4 @@ header {
     padding-top: 100px;
     margin: 0;
 }
+*/

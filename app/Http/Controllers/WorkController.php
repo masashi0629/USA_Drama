@@ -22,7 +22,7 @@ class WorkController extends Controller
     public function index()
     {
         //ランダム作品表示
-        $works = Work::inRandomOrder()->take(3)->get();
+        $works = Work::inRandomOrder()->take(4)->get();
 
         $genres = Genre::orderBy('genre_name','asc')->get();
         $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
