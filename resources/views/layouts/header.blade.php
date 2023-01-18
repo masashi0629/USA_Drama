@@ -1,17 +1,13 @@
-<header class="bg-white lg:pb-12  max-w-screen-2xl px-4 md:px-8 mx-auto flex justify-between items-center py-4 -pl4 md:py-8">
+<header class="bg-white lg:pb-12  max-w-screen-2xl px-2 md:px-2 mx-auto flex justify-between items-center py-4 md:py-8">
     <div class="header-left">
         <a href="{{ route('works.index') }}" class= "inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo">
-
-            <svg width="95" height="94" viewBox="0 0 95 94" class="w-6 h-auto text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-            </svg>
 
             AMERICAN DRAMA NAVI
         </a>
         <form method="GET" action="{{ route('works.search') }}">
           <div class=" lg:flex gap-12 ">
             <input type="text" placeholder="キーワードを入力"
-            name="keyword" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 -ml1 font-semibold transition duration-100"/>
+            name="keyword" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 ml-10 font-semibold transition duration-100 border border-indigo-600"/>
 
             <select name="category" class="inline-flex items-center text-indigo-500 text-lg font-semibold gap-1 -ml-2">
                 <option value="work">作品名から検索</option>
@@ -20,10 +16,10 @@
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
+                </svg>
             </select>
 
-            <input type="submit" value="検索" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100"/>
+            <input type="submit" value="検索" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100 border-indigo-600 border p-1"/>
           </div>
         </form>
     </div>
@@ -45,7 +41,7 @@
                 </ul>
             </li>
 
-            <li class="">
+            <li class="ml-3">
                 <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
                     ・年代から検索
                 </a>
@@ -60,7 +56,7 @@
                 </ul>
             </li>
 
-            <li class="">
+            <li class="ml-3 mr-5">
                 <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
                     ・放送局から検索
                 </a>
@@ -89,13 +85,13 @@
         </form>
         @else
 
-        <a href="{{ route('login') }}" class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3">
-            ログイン
+        <a href="{{ route('login') }}" class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3 ml-1">
+            ログイン{{ $genres }}
         </a>
 
         @if (Route::has('register'))
         <a href="{{ route('register') }} " class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3">
-            新規登録
+            新規登録 {{ $genres }}
         </a>
         @endif
         @endauth
