@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\WorkController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('works', 'WorkController');
+
+Route::get('/search','WorkController@search')->name('works.search');
+
+Route::get('/genre/{genre?}','WorkController@genre')->name('works.genre');
+
+Route::get('/broadcast_time/{broadcast_time?}','WorkController@broadcast_time')->name('works.broadcast_time');
+
+Route::get('/usa_broadcaster/{usa_broadcaster?}','WorkController@usa_broadcaster')->name('works.usa_broadcaster');

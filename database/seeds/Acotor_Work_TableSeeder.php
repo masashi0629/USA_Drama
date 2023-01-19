@@ -1,8 +1,8 @@
 <?php
-
+use App\Models\Acotor_Work;
 use Illuminate\Database\Seeder;
 
-class AdminTableSeeder extends Seeder
+class Acotor_Work_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Acotor_Work::class,15)->create();
     }
 }

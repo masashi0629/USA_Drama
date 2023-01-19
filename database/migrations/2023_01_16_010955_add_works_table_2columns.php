@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVoiceActorsTable extends Migration
+class AddWorksTable2columns extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateVoiceActorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('voice_actors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('voice_actor_name');
-            $table->timestamps();
+        Schema::table('works', function (Blueprint $table) {
+            $table->string('file_name')->comment('ファイル名');
+            $table->text('summary')->comment('あらすじ');
         });
     }
 
@@ -27,6 +26,8 @@ class CreateVoiceActorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voice_actors');
+        Schema::table('works', function (Blueprint $table) {
+            //
+        });
     }
 }
