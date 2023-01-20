@@ -63,7 +63,7 @@
                 <ul>
                     @foreach($usa_broadcasters as $usa_broadcaster)
                     <li>
-                        <a class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100" href="/broadcast_time/{{$broadcast_time->id}}">
+                        <a class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100" href="/usa_broadcaster/{{$usa_broadcaster->id}}">
                             {{ $usa_broadcaster->broadcaster_name }}
                         </a>
                     </li>
