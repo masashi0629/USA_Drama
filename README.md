@@ -4,8 +4,8 @@
 ※画像は著作権の問題で、作品とは関係ない画像が出ます。url 54.248.188.205
 
 データベース設計 
-(https://user-images.githubusercontent.com/121473458/218263436-5b1c5e15-9e19-496b-a674-5c91b6edd791.png)
-(https://user-images.githubusercontent.com/121473458/218263909-f4eb3835-86b5-44d1-9e36-5db2b4c10315.png)
+![FireShot Capture 009 - データベース設計 - Google スプレッドシート - docs google com](https://user-images.githubusercontent.com/121473458/218264455-12ffb6a9-fb66-4974-81c6-1ec475bc99dd.png)
+![FireShot Capture 008 - データベース設計 - Google スプレッドシート - docs google com](https://user-images.githubusercontent.com/121473458/218264694-8963464c-c492-4e49-ad03-d38a629cd2f3.png)
 
 
 ##　作成動機
