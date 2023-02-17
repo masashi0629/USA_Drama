@@ -114,7 +114,7 @@ class WorkController extends Controller
         $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
         if($request->category == 'work'){
             $query = Work::query();
-             $query->where('work_name', 'LIKE', "%{$keyword}%");
+            $query->where('work_name', 'LIKE', "%{$keyword}%");
         }
         elseif ($request->category == 'actor') {
             $query = Work::query();
@@ -133,19 +133,19 @@ class WorkController extends Controller
     }
 
     public function genre(string $genre){
-    $works = Genre::find($genre)->works()->get();
-    $genres = Genre::orderBy('genre_name','asc')->get();
-    $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
-    $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
-    return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
+        $works = Genre::find($genre)->works()->get();
+        $genres = Genre::orderBy('genre_name','asc')->get();
+        $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
+        $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
+        return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
     }
 
     public function broadcast_time(string $broadcast_time){
-    $works = BroadcastTime::find($broadcast_time)->works()->get();
-    $genres = Genre::orderBy('genre_name','asc')->get();
-    $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
-    $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
-    return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
+        $works = BroadcastTime::find($broadcast_time)->works()->get();
+        $genres = Genre::orderBy('genre_name','asc')->get();
+        $broadcast_times = BroadcastTime::orderBy('age_group','asc')->get();
+        $usa_broadcasters = UsaBroadcaster::orderBy('broadcaster_name','asc')->get();
+        return view('works/index',compact('works','genres','broadcast_times','usa_broadcasters'));
     }
 
     public function usa_broadcaster(string $usa_broadcaster){
